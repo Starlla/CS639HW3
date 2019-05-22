@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="5dp">
+    
+    <com.example.cs639hw3.LineGraphView
+        android:id="@+id/line_graph_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:pointRadius="5dp"
+        app:pointColor="#4F636E"
+        app:maxColor="#FE5F55"
+        app:lineColor="#0D5C63"
+        app:pathColor="#B8D8D8" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_toStartOf="@id/date_text_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignTop="@+id/date_text_edit"
+        android:layout_alignBottom="@id/date_text_edit"
+        android:text="@string/date"
+         />
+    <EditText
+        android:id="@+id/date_text_edit"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/student_count"
+        android:layout_below="@id/line_graph_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789/"
+        android:inputType="date"
+        />
+
+    <TextView
+        android:id="@+id/student_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/count_text_edit"
+        android:layout_alignBottom="@id/count_text_edit"
+        android:text="@string/student_count"
+        android:gravity="center" />
+    <EditText
+        android:id="@+id/count_text_edit"
+        android:layout_below="@id/date_text_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:inputType="number"
+        android:layout_toEndOf="@+id/student_count"
+        />
+    <RelativeLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/count_text_edit"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp">
+    <Button
+        android:id="@+id/addDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_data"/>
+    <Button
+        android:id="@+id/clearDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/addDataButton"
+        android:layout_toEndOf="@id/addDataButton"
+        android:text="@string/clear_data"/>
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/show_lines"
+        android:layout_below="@id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_lines"/>
+    <CheckBox
+        android:id="@+id/highlight_integral"
+        android:layout_below="@id/show_lines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/highlight_integral"/>
+    <TextView
+        android:id="@+id/min_radius_text_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/seekBar"
+        android:layout_alignTop="@id/seekBar"
+        android:gravity="center"
+        android:text="@string/number_5"
+        android:padding="5dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/highlight_integral"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_toStartOf="@id/max_radius_text_10"
+        android:layout_toEndOf="@id/min_radius_text_5"
+        android:padding="10dp" />
+    <TextView
+        android:id="@+id/max_radius_text_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/seekBar"
+        android:layout_alignTop="@id/seekBar"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:text="@string/number_10"
+        android:padding="5dp"/>
+
+
+</RelativeLayout>
